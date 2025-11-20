@@ -42,6 +42,7 @@ function showMoodPage() {
 function showMoodResult(mood) {
   if(mood.label === "Happy") {
     document.getElementById('mood').innerHTML = `
+    <span class="back-arrow" onclick="goBackToMoodPage()">&#8592; Back</span>
     <h2>Happy Mood 😊</h2>
     <p>Write down three things you're grateful for today!</p>
     <textarea id="gratitudeInput" rows="6" style="width:80%;max-width:400px;display:block;margin:12px auto 8px auto;padding:8px;font-size:1.1em;"></textarea>
@@ -54,6 +55,7 @@ function showMoodResult(mood) {
   }
    else if (mood.label === "Stressed") {
     document.getElementById('mood').innerHTML = `
+    <span class="back-arrow" onclick="goBackToMoodPage()">&#8592; Back</span>
     <h2>Stressed Mood 😣</h2>
       <p>Try this: Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds. Repeat for 30 seconds.</p>
       <div id="breathingGuide" style="margin:18px auto;">
@@ -68,6 +70,7 @@ function showMoodResult(mood) {
     document.getElementById('startBreath').onclick = startBreathing;
   } else if (mood.label === "Anxious") {
     document.getElementById('mood').innerHTML = `
+    <span class="back-arrow" onclick="goBackToMoodPage()">&#8592; Back</span
     <h2>Anxious Mood 😰</h2>
       <p>Write down your worries and one positive thought.</p>
       <textarea id="worriesInput" rows="3" placeholder="What are you anxious about?" style="width:90%;max-width:400px;display:block;margin:12px auto 8px auto;padding:7px;font-size:1em;"></textarea>
@@ -84,6 +87,7 @@ function showMoodResult(mood) {
   }
    else if (mood.label === "Creative") {
     document.getElementById('mood').innerHTML = `
+    <span class="back-arrow" onclick="goBackToMoodPage()">&#8592; Back</span>
     <h2>Creative Mood 🤔</h2>
     <p>Feeling creative? Doodle, invent, or explore new ideas!</p>
     <div style="width:320px;margin:15px auto 10px auto;">
@@ -110,6 +114,7 @@ function showMoodResult(mood) {
 
 else if (mood.label === "Bored") {
   document.getElementById('mood').innerHTML = `
+    <span class="back-arrow" onclick="goBackToMoodPage()">&#8592; Back</span>
     <h2>Bored Mood 🥱</h2>
     <p>Try a quick riddle or brain teaser to wake up your mind!</p>
     <div style="margin:12px 0;">
@@ -144,6 +149,7 @@ else if (mood.label === "Bored") {
 
 else if (mood.label === "Tired") {
   document.getElementById('mood').innerHTML = `
+    <span class="back-arrow" onclick="goBackToMoodPage()">&#8592; Back</span>
     <div id="tiredOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(32,34,60,0.72);z-index:10;pointer-events:none;transition:opacity 0.8s;"></div>
     <div id="tiredContent" style="position:relative;z-index:20;text-align:center;padding:32px 0 10px 0;">
       <span style="font-size:2.4em;">🌙</span>
@@ -472,4 +478,11 @@ function closeTiredMode() {
 
 }
 
+function goBackToWelcome() {
+  document.getElementById('splash').style.display = 'block';
+  document.getElementById('buttonsPage').style.display = 'none';
+}
 
+function goBackToMoodPage() {
+  showMoodPage();
+}
