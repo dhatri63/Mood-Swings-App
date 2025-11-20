@@ -418,17 +418,17 @@ function showTiredAudioBlock() {
 function setTiredAudio(type) {
   let src = "";
   if (type === 'rain1')
-    src = "C:/Users/91620/Desktop/Mood Swings/rain audio/sleepy-rain-116521.mp3"; // Rain: Pixabay
+    src = "audio/rain audio/sleepy-rain-116521.mp3"; // Rain: Pixabay
   else if (type === 'rain2')
-    src = "C:/Users/91620/Desktop/Mood Swings/rain audio/rain-by-prabajithk-119000.mp3"; // Rain: Pixabay
+    src = "audio/rain audio/rain-by-prabajithk-119000.mp3"; // Rain: Pixabay
   else if (type === 'rain3')
-    src = "C:/Users/91620/Desktop/Mood Swings/rain audio/ambient-forest-rain-375365.mp3"; // Rain: Pixabay
+    src = "audio/rain audio/ambient-forest-rain-375365.mp3"; // Rain: Pixabay
   else if (type === 'lofi1')
-    src = "C:/Users/91620/Desktop/Mood Swings/relax music/morning-relaxing-144011.mp3"; // Lofi: Pixabay
+    src = "audio/relax music/morning-relaxing-144011.mp3"; // Lofi: Pixabay
   else if (type === 'lofi2')
-    src = "C:/Users/91620/Desktop/Mood Swings/relax music/please-calm-my-mind-125566.mp3"; // Lofi: Pixabay
+    src = "audio/relax music/please-calm-my-mind-125566.mp3"; // Lofi: Pixabay
   else if (type === 'lofi3')
-    src = "C:/Users/91620/Desktop/Mood Swings/relax music/relaxing-piano-music-262898.mp3"; // Lofi: Pixabay
+    src = "audio/relax music/relaxing-piano-music-262898.mp3"; // Lofi: Pixabay
   document.getElementById('tiredAudioSrc').src = src;
   const audio = document.getElementById('tiredAudio');
   audio.load();
@@ -471,3 +471,4 @@ function closeTiredMode() {
   }
 
 }
+
