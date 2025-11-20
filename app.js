@@ -58,7 +58,7 @@ function showMoodResult(mood) {
       <p>Try this: Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds. Repeat for 30 seconds.</p>
       <div id="breathingGuide" style="margin:18px auto;">
         <div id="breathCircle" style="width:100px;height:100px;border-radius:50%;background:#bdd7fa;margin:auto;transition:all 1s;">
-        <img src="C:/Users/91620/Desktop/Mood Swings/breath.jpg" id="circleImg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;" alt="Circle Image"></div>
+        <img src="breath.jpg" id="circleImg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;" alt="Circle Image"></div>
         <div id="breathText" style="text-align:center;margin-top:14px;font-size:1.2em;">Get Ready</div>
         <button id="startBreath" style="display:block;margin:16px auto;">Start Breathing</button>
       </div>
@@ -469,4 +469,5 @@ function closeTiredMode() {
   } else {
     location.reload();
   }
+
 }
