@@ -418,17 +418,17 @@ function showTiredAudioBlock() {
 function setTiredAudio(type) {
   let src = "";
   if (type === 'rain1')
-    src = "audio/rain audio/sleepy-rain-116521.mp3"; // Rain: Pixabay
+    src = "sleepy-rain-116521.mp3"; // Rain: Pixabay
   else if (type === 'rain2')
-    src = "audio/rain audio/rain-by-prabajithk-119000.mp3"; // Rain: Pixabay
+    src = "rain-by-prabajithk-119000.mp3"; // Rain: Pixabay
   else if (type === 'rain3')
-    src = "audio/rain audio/ambient-forest-rain-375365.mp3"; // Rain: Pixabay
+    src = "ambient-forest-rain-375365.mp3"; // Rain: Pixabay
   else if (type === 'lofi1')
-    src = "audio/relax music/morning-relaxing-144011.mp3"; // Lofi: Pixabay
+    src = "morning-relaxing-144011.mp3"; // Lofi: Pixabay
   else if (type === 'lofi2')
-    src = "audio/relax music/please-calm-my-mind-125566.mp3"; // Lofi: Pixabay
+    src = "please-calm-my-mind-125566.mp3"; // Lofi: Pixabay
   else if (type === 'lofi3')
-    src = "audio/relax music/relaxing-piano-music-262898.mp3"; // Lofi: Pixabay
+    src = "relaxing-piano-music-262898.mp3"; // Lofi: Pixabay
   document.getElementById('tiredAudioSrc').src = src;
   const audio = document.getElementById('tiredAudio');
   audio.load();
@@ -471,4 +471,5 @@ function closeTiredMode() {
   }
 
 }
+
 
