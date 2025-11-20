@@ -40,4 +40,18 @@ button:hover {
   gap: 22px;
   margin-top: 26px;
   justify-items: center;
+
+}
+.back-arrow {
+  font-size: 2em;
+  cursor: pointer;
+  color: #6a85b6;
+  margin: 18px 0;
+  display: inline-block;
+  transition: color 0.2s, transform 0.2s;
+  user-select: none;
+}
+.back-arrow:hover {
+  color: #4c5b75;
+  transform: translateX(-4px);
 }
