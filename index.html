@@ -16,10 +16,13 @@
 
   <!-- Mood selection screen (hidden at first) -->
   <div id="mood" class="centered" style="display:none;"></div>
-
+  
+  <!-- Universal hidden audio element controlled via JS -->
+  <audio id="tiredAudio" style="display:none;" controls>
+    <source id="tiredAudioSrc" src="" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
   <script src="app.js"></script>
 </body>
 
 </html>
-
-
