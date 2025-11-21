@@ -13,32 +13,6 @@ function goBackToMoodPage() {
   showMoodPage();
 }
 
-function setMoodOverlay(moodLabel) {
-  const overlay = document.getElementById('moodOverlay');
-  let color = '', animation = '';
-  if (moodLabel === "Happy") {
-    color = 'rgba(255,231,181,0.65)'; // warm, light yellow
-    animation = '🩷';
-  } else if (moodLabel === "Stressed") {
-    color = 'rgba(180,212,255,0.60)'; // calming blue
-    animation = 'pulse 5s infinite'; // slow pulse
-  } else if (moodLabel === "Anxious") {
-    color = 'rgba(178,216,200,0.55)'; // gentle muted green
-    animation = 'fadein 6s infinite alternate'; // fading
-  } else if (moodLabel === "Creative") {
-    color = 'rgba(215,192,250,0.52)'; // dreamy violet
-    animation = ''; // sparkles optional
-  } else if (moodLabel === "Bored") {
-    color = 'rgba(220,222,228,0.47)'; // neutral pale
-    animation = 'slowmove 10s infinite'; // slow movement
-  } else if (moodLabel === "Tired") {
-    color = 'rgba(31,38,60,0.68)'; // dimmed navy
-    animation = 'drift 10s infinite alternate'; // slow drift
-  }
-  overlay.style.background = color;
-  overlay.style.animation = animation;
-}
-
 // Show mood selection page with back arrow at top left
 
 function showMoodPage() {
@@ -190,6 +164,7 @@ else if (mood.label === "Tired") {
   document.getElementById('mood').innerHTML = `
     <span class="back-arrow" onclick="goBackToMoodPage()">&#8592;</span>
     <div id="tiredContent" style="position:relative;z-index:20;text-align:center;padding:32px 0 10px 0;">
+    <div id="tiredOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(32,34,60,0.72);z-index:10;pointer-events:none;transition:opacity 0.8s;"></div>
       <span style="font-size:2.4em;">🌙</span>
       <h2 style="color:#e0dcf6;margin-bottom:4px;">Tired?</h2>
       <p style="color:#dbdef5;margin-top:6px;">
@@ -486,6 +461,17 @@ function stopTiredAudio() {
   }
 }
 
+function closeTiredMode() {
+  // Remove overlay and reset
+  const overlay = document.getElementById('tiredOverlay');
+  if (overlay) {
+    overlay.style.opacity = 0.05;
+    setTimeout(()=>location.reload(), 350);
+  } else {
+    location.reload();
+  }
+
+}
 const carePrompts = [
   "Blink slowly 10 times—let your eyes relax.",
   "Take three deep breaths in and out.",
@@ -512,5 +498,6 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
