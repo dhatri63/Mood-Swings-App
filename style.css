@@ -43,15 +43,25 @@ button:hover {
 
 }
 .back-arrow {
-  font-size: 2em;
+  position: absolute;
+  top: 28px;       /* adjust for your header/layout */
+  left: 24px;
+  font-size: 2.3em;
+  color: #111;
+  background: none;
+  border: none;
   cursor: pointer;
-  color: #6a85b6;
-  margin: 18px 0;
-  display: inline-block;
+  z-index: 1000;
   transition: color 0.2s, transform 0.2s;
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;     /* hit area, adjust as needed */
+  height: 48px;
+  padding: 0;
 }
 .back-arrow:hover {
-  color: #4c5b75;
-  transform: translateX(-4px);
+  color: #666;
+  transform: translateX(-4px) scale(1.07);
 }
