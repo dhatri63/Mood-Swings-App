@@ -72,3 +72,25 @@ button:hover {
   color: #666;
   transform: translateX(-4px) scale(1.07);
 }
+html, body {
+  overscroll-behavior-y: contain; /* Prevent swipe from scrolling the whole page in canvas mode */
+}
+
+#creativeCanvas {
+  width: 90vw;          /* Make it nearly full screen width */
+  height: 65vh;         /* Let it occupy most of screen height */
+  display: block;
+  margin: 32px auto 20px auto;   /* Center it, with spacing above/below */
+  background: #faf7f0;  /* Soft background color, optional */
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #b6bcd850;
+  touch-action: none;   /* Prevent browser gestures, allow touch drawing */
+}
+
+@media (max-width: 600px) {
+  #creativeCanvas {
+    width: 97vw;
+    height: 62vh;
+    margin: 14px auto 12px auto;
+  }
+}
