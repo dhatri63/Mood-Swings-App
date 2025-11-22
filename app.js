@@ -199,6 +199,7 @@ else if (mood.label === "Tired") {
       <button onclick="closeTiredMode()" style="background:#d4eaff;color:#2b2c36;margin-top:16px;padding:7px 22px;border:none;border-radius:14px;">Back to Main</button>
     </div>
   `;
+  setTimeout(()=>{document.getElementById('tiredOverlay').style.opacity = "1";}, 80);
   // Set up audio selection default
   document.getElementById('audioSelect').onchange = function() {
     setTiredAudio(this.value);
@@ -453,14 +454,6 @@ function setTiredAudio(type) {
   audio.play().catch(()=>{});
 }
 
-function stopTiredAudio() {
-  const audio = document.getElementById('tiredAudio');
-  if (audio) {
-    audio.pause();
-    audio.currentTime = 0;
-  }
-}
-
 function closeTiredMode() {
   // Remove overlay and reset
   const overlay = document.getElementById('tiredOverlay');
@@ -490,6 +483,14 @@ function spinCarePrompt() {
   document.getElementById('spinCareResult').innerText = carePrompts[idx];
 }
 
+function stopTiredAudio() {
+  const audio = document.getElementById('tiredAudio');
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
+
 function goBackToWelcome() {
   document.getElementById('splash').style.display = 'block';
   document.getElementById('buttonsPage').style.display = 'none';
@@ -498,6 +499,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
