@@ -52,7 +52,6 @@ function showMoodPage() {
 
 // Mood result logic for Happy and other moods
 function showMoodResult(mood) {
-  setMoodOverlay(mood.label);
   if(mood.label === "Happy") {
     document.getElementById('mood').innerHTML = `
     <span class="back-arrow" onclick="goBackToMoodPage()">&#8592;</span>
@@ -163,6 +162,7 @@ else if (mood.label === "Bored") {
 else if (mood.label === "Tired") {
   document.getElementById('mood').innerHTML = `
     <span class="back-arrow" onclick="goBackToMoodPage()">&#8592;</span>
+    <div id="tiredOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(32,34,60,0.72);z-index:10;pointer-events:none;transition:opacity 0.8s;"></div>
     <div id="tiredContent" style="position:relative;z-index:20;text-align:center;padding:32px 0 10px 0;">
     <div id="tiredOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(32,34,60,0.72);z-index:10;pointer-events:none;transition:opacity 0.8s;"></div>
       <span style="font-size:2.4em;">🌙</span>
@@ -455,6 +455,7 @@ function setTiredAudio(type) {
 }
 
 function closeTiredMode() {
+  setTimeout(()=>{document.getElementById('tiredOverlay').style.opacity = "1";}, 80);
   // Remove overlay and reset
   const overlay = document.getElementById('tiredOverlay');
   if (overlay) {
@@ -499,6 +500,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
