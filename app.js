@@ -164,7 +164,6 @@ else if (mood.label === "Tired") {
     <span class="back-arrow" onclick="goBackToMoodPage()">&#8592;</span>
     <div id="tiredOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(32,34,60,0.72);z-index:10;pointer-events:none;transition:opacity 0.8s;"></div>
     <div id="tiredContent" style="position:relative;z-index:20;text-align:center;padding:32px 0 10px 0;">
-    <div id="tiredOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(32,34,60,0.72);z-index:10;pointer-events:none;transition:opacity 0.8s;"></div>
       <span style="font-size:2.4em;">🌙</span>
       <h2 style="color:#e0dcf6;margin-bottom:4px;">Tired?</h2>
       <p style="color:#dbdef5;margin-top:6px;">
@@ -500,6 +499,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
