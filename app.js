@@ -4,7 +4,7 @@ const firebaseConfig = {
   projectId: "your-project-id",
   storageBucket: "your-app.appspot.com",
   messagingSenderId: "your-msg-id",
-  appId: "your-app-id"
+  appId: "1:392422888380:web:e532b0367a9ea2f43311b9"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -663,6 +663,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
