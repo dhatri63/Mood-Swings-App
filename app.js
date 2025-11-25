@@ -9,6 +9,34 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+// Step 2: Set up Firebase Auth and Firestore references
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+// Step 3: Add authentication and database functions
+function signUp(email, password) {
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Success logic
+    })
+    .catch((error) => {
+      // Error handling
+    });
+}
+
+function logIn(email, password) {
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Success logic
+    })
+    .catch((error) => {
+      // Error handling
+    });
+}
+
+function logOut() {
+  auth.signOut();
+
 document.getElementById('continueBtn').onclick = function() {
   document.getElementById('splash').style.display = 'none';
   showMoodPage();
@@ -510,6 +538,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
