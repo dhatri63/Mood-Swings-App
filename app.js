@@ -9,36 +9,161 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// Step 2: Set up Firebase Auth and Firestore references
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-// Step 3: Add authentication and database functions
-function signUp(email, password) {
+document.getElementById('continueBtn').onclick = function() {
+  document.getElementById('spdocument.getElementById('continueBtn').onclick = function() {
+  document.getElementById('splash').style.display = 'none';
+  document.getElementById('loginForm').style.display = 'block';
+};
+
+// -- Auth Functions --
+function signUp() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
   auth.createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Success logic
+      alert('Signup successful! Welcome, ' + userCredential.user.email);
+      // Place logic to show next part of app here.
     })
     .catch((error) => {
-      // Error handling
+      alert('Signup error: ' + error.message);
     });
 }
 
-function logIn(email, password) {
+function logIn() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Success logic
+      alert('Login successful! Welcome back, ' + userCredential.user.email);
+      // Place logic to show next part of app here.
     })
     .catch((error) => {
-      // Error handling
+      alert('Login error: ' + error.message);
     });
 }
 
+// Optional: Logout function
 function logOut() {
-  auth.signOut();
+  auth.signOut()
+    .then(() => {
+      alert('Logged out!');
+      document.getElementById('loginForm').style.display = 'block';
+    });
+}
 
-document.getElementById('continueBtn').onclick = function() {
+// Automatically update UI/log state on login/out
+auth.onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById('loginForm').style.display = 'none';
+    // You can load user data or show user-specific UI here
+    // Example: loadUserData(user.uid);
+  } else {
+    document.getElementById('loginForm').style.display = 'block';
+  }
+});document.getElementById('continueBtn').onclick = function() {
   document.getElementById('splash').style.display = 'none';
+  document.getElementById('loginForm').style.display = 'block';
+};
+
+// -- Auth Functions --
+function signUp() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      alert('Signup successful! Welcome, ' + userCredential.user.email);
+      // Place logic to show next part of app here.
+    })
+    .catch((error) => {
+      alert('Signup error: ' + error.message);
+    });
+}
+
+function logIn() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      alert('Login successful! Welcome back, ' + userCredential.user.email);
+      // Place logic to show next part of app here.
+    })
+    .catch((error) => {
+      alert('Login error: ' + error.message);
+    });
+}
+
+// Optional: Logout function
+function logOut() {
+  auth.signOut()
+    .then(() => {
+      alert('Logged out!');
+      document.getElementById('loginForm').style.display = 'block';
+    });
+}
+
+// Automatically update UI/log state on login/out
+auth.onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById('loginForm').style.display = 'none';
+    // You can load user data or show user-specific UI here
+    // Example: loadUserData(user.uid);
+  } else {
+    document.getElementById('loginForm').style.display = 'block';
+  }
+});document.getElementById('continueBtn').onclick = function() {
+  document.getElementById('splash').style.display = 'none';
+  document.getElementById('loginForm').style.display = 'block';
+};
+
+// -- Auth Functions --
+function signUp() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      alert('Signup successful! Welcome, ' + userCredential.user.email);
+      // Place logic to show next part of app here.
+    })
+    .catch((error) => {
+      alert('Signup error: ' + error.message);
+    });
+}
+
+function logIn() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      alert('Login successful! Welcome back, ' + userCredential.user.email);
+      // Place logic to show next part of app here.
+    })
+    .catch((error) => {
+      alert('Login error: ' + error.message);
+    });
+}
+
+// Optional: Logout function
+function logOut() {
+  auth.signOut()
+    .then(() => {
+      alert('Logged out!');
+      document.getElementById('loginForm').style.display = 'block';
+    });
+}
+
+// Automatically update UI/log state on login/out
+auth.onAuthStateChanged(function(user) {
+  if (user) {
+    document.getElementById('loginForm').style.display = 'none';
+    // You can load user data or show user-specific UI here
+    // Example: loadUserData(user.uid);
+  } else {
+    document.getElementById('loginForm').style.display = 'block';
+  }
+});lash').style.display = 'none';
   showMoodPage();
 };
 let isEraser = false; //used in creative mode
@@ -538,6 +663,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
