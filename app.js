@@ -1,10 +1,13 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-app.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-app.appspot.com",
-  messagingSenderId: "your-msg-id",
-  appId: "1:392422888380:web:e532b0367a9ea2f43311b9"
+  apiKey: "AIzaSyA7wYRXoHFQHm6xQ-4KJjarde4R7zdsRRY",
+  authDomain: "mood-swings-17f4e.firebaseapp.com",
+  projectId: "mood-swings-17f4e",
+  storageBucket: "mood-swings-17f4e.firebasestorage.app",
+  messagingSenderId: "392422888380",
+  appId: "1:392422888380:web:e532b0367a9ea2f43311b9",
+  measurementId: "G-F4MXLMKEWN"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -663,6 +666,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
