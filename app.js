@@ -1,3 +1,8 @@
+document.getElementById('continueBtn').onclick = function() {
+  document.getElementById('splash').style.display = 'none';
+  showMoodPage();
+};
+
 let isEraser = false; //used in creative mode
 
 function goBackToWelcome() {
@@ -495,6 +500,7 @@ function goBackToWelcome() {
 function goBackToMoodPage() {
   showMoodPage();
 }
+
 
 
 
