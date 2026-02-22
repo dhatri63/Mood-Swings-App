@@ -21,8 +21,24 @@
     <source id="tiredAudioSrc" src="" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+  
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCUCWK_AiFhzSbky6hqZagmY9TfiKbgwaE",
+      authDomain: "moodswings-dhatri.firebaseapp.com",
+      databaseURL: "https://moodswings-dhatri-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "moodswings-dhatri",
+      storageBucket: "moodswings-dhatri.firebasestorage.app",
+      messagingSenderId: "1098799294113",
+      appId: "1:1098799294113:web:ddf1cb8b5e6b2a8551f2e0"
+    };
+    firebase.initializeApp(firebaseConfig);
+    window.db = firebase.database(); 
+  </script>
+  
   <script src="app.js"></script>
 </body>
 
 </html>
-
