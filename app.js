@@ -504,18 +504,19 @@ function goBackToMoodPage() {
 }
 
 function saveMood(emoji, label) {
-  db.ref('moods').push({
-    emoji: emoji,
-    mood: label,
+  fetch('https://ipapi.co/json/').then(r=>r.json()).then(data=>{
+    db.ref('moods').push({
+      emoji, label,
+      user: data.ip,           
+      city: data.city,   
     time: new Date().toLocaleTimeString('en-IN'),
-    user: 'Dhatri',
-    date: new Date().toLocaleDateString('en-IN')
-  }).then(() => {
-    alert('Mood saved to Firebase! ✅');
-  }).catch(err => {
-    console.error('Save error:', err);
+    date: new Date().toLocaleDateString('en-IN'),
+  });
+    }).catch(()=>{
+    // Fallback code here
   });
 }
+
 
 
 
