@@ -1,3 +1,4 @@
+const db = window.db;
 document.getElementById('continueBtn').onclick = function() {
   document.getElementById('splash').style.display = 'none';
   showMoodPage();
@@ -45,7 +46,8 @@ function showMoodPage() {
     btn.style.cursor = 'pointer';
     btn.style.margin = '10px';
     btn.onclick = function() {
-   showMoodResult(mood);
+      saveMood(mood.emoji, mood.label);
+      showMoodResult(mood);
     };
     buttonsDiv.appendChild(btn);
   });
@@ -501,7 +503,19 @@ function goBackToMoodPage() {
   showMoodPage();
 }
 
-
+function saveMood(emoji, label) {
+  db.ref('moods').push({
+    emoji: emoji,
+    mood: label,
+    time: new Date().toLocaleTimeString('en-IN'),
+    user: 'Dhatri',
+    date: new Date().toLocaleDateString('en-IN')
+  }).then(() => {
+    alert('Mood saved to Firebase! ✅');
+  }).catch(err => {
+    console.error('Save error:', err);
+  });
+}
 
 
 
